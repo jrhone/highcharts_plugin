@@ -13,18 +13,15 @@ st.register_component("my_component", "component_template/build")
 if st.button("Lift Off"):
     t = st.empty()
     text = "Welcome to the first day... of the rest... of your life"
+    emojis = [":sparkler:", ":fire:", ":rocket:"]
 
     for i in range(len(list(text)) + 1):
         t.markdown("## %s..." % text[0:i])
         time.sleep(0.1)
 
-    time.sleep(0.2)
-    t.markdown("## %s %s" % (text, ":sparkler:"))
-    time.sleep(0.4)
-    t.markdown("## %s %s" % (text, ":fire:"))
-    time.sleep(0.4)
-    t.markdown("## %s %s" % (text, ":rocket:"))
-
+    for i in emojis:
+      time.sleep(0.3)
+      t.markdown("## %s %s" % (text, i))
 
     " "
     " "
